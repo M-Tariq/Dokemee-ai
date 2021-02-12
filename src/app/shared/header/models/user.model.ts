@@ -3,5 +3,10 @@ export class User {
     LastName: string;
     Email: string;
     // ImageUrl: string;
+    constructor(){
+      this.FirstName="";
+      this.LastName="";
+      this.Email=";"
+    }
   }
   
