@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { NotificationService } from 'src/app/services/notification.service';
 import { AuthService } from '../../../../services/auth.service';
 
 @Component({
@@ -16,7 +15,7 @@ export class LoginFormComponent implements OnInit {
 
   public form: FormGroup = new FormGroup({});
 
-  constructor(private authService: AuthService, private router: Router, private notificationService: NotificationService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   public ngOnInit(): void {
     this.form = new FormGroup({
@@ -36,14 +35,12 @@ export class LoginFormComponent implements OnInit {
     this.isLoading = true;
     this.authService.loginUser({ username: email, password: password }).subscribe(res => {
       this.isLoading = false;
-      this.notificationService.showSuccess("You are successfully logged In.", "Success");
       const token = res.TokenDetails.Token;
       localStorage.setItem('token', token);
       this.router.navigateByUrl('/dashboard');
 
     }, error => {
       this.isLoading = false;
-      this.notificationService.showError(error.error.Message, "Error");
       this.api_error = error.error.Message;
     });
   }

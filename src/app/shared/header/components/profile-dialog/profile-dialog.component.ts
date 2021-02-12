@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { AuthService } from 'src/app/services/auth.service';
-import { NotificationService } from 'src/app/services/notification.service';
 import { User } from '../../models/user.model';
 
 
@@ -14,23 +13,23 @@ import { User } from '../../models/user.model';
 export class ProfileDialogComponent implements OnInit {
 
   public form: FormGroup=new FormGroup({});
-  public user: User;
+  public user: User=new User();
   public isLoading: boolean=false;
   constructor(public dialogRef: MatDialogRef<ProfileDialogComponent>, public dialog: MatDialog,
-    private authService: AuthService, private notificationService: NotificationService) { 
-      this.authService.getUserProfile().subscribe(res=>{
-        console.log(res);
-        this.user=res;
-      }, error=>{
-        console.log(error);
-      })
+    private authService: AuthService) { 
+      
     }
 
-  onNoClick(): void {
-    this.dialogRef.close();
-  }
+  // onNoClick(): void {
+  //   this.dialogRef.close();
+  // }
 
   ngOnInit(): void {
+    this.authService.getUserProfile().subscribe(res=>{
+      this.user=res;
+    }, error=>{
+      console.log(error);
+    })
     this.form=new FormGroup({
       firstName: new FormControl(null, [Validators.required, Validators.minLength(3)]),
       lastName: new FormControl(null, [Validators.required, Validators.minLength(3)]),
@@ -47,11 +46,9 @@ export class ProfileDialogComponent implements OnInit {
     this.isLoading=true;
     this.authService.updateUserProfile(this.form.value).subscribe(res=>{
       this.isLoading=false;
-      this.notificationService.showSuccess("Profile Updated Successfully!", "Success" );
       this.dialogRef.close();
     }, error=>{
       this.isLoading=false;
-      this.notificationService.showError("Something went wrong!", "Failure");
       console.log(error);
     })
   }

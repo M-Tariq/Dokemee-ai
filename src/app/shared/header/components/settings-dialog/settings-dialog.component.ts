@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { AuthService } from 'src/app/services/auth.service';
-import { NotificationService } from 'src/app/services/notification.service';
 import { SettingsService } from 'src/app/services/settings.service';
 import { SmtpSetting } from '../../models/setting-smtp.model';
 
@@ -14,12 +12,11 @@ import { SmtpSetting } from '../../models/setting-smtp.model';
 export class SettingsDialogComponent implements OnInit {
 
   public hide: boolean = true;
-  public smtpSetting: SmtpSetting;
+  public smtpSetting: SmtpSetting=new SmtpSetting();
   public error: string;
   public isLoading: boolean=false;
   public form: FormGroup = new FormGroup({});
-  constructor(private notificationService: NotificationService,
-    public dialogRef: MatDialogRef<SettingsDialogComponent>, public dialog: MatDialog,
+  constructor(public dialogRef: MatDialogRef<SettingsDialogComponent>, public dialog: MatDialog,
     private settingsService: SettingsService) {
 
   }
@@ -28,7 +25,6 @@ export class SettingsDialogComponent implements OnInit {
   // }
   ngOnInit(): void {
     this.settingsService.getSmtpSettings().subscribe(res => {
-      console.log(res);
       this.smtpSetting = res.Configuration;
     }, error => {
       console.log(error);
@@ -53,13 +49,12 @@ export class SettingsDialogComponent implements OnInit {
     this.smtpSetting.Password = this.form.value.password;
     this.isLoading=true;
     this.settingsService.updateSmtpSettings(this.smtpSetting).subscribe(res => {
-      this.isLoading=true;
-      this.notificationService.showSuccess("Settings Updated Successfully!", "Success");
+      this.isLoading=false;
       this.dialogRef.close();
     }, error => {
-      this.isLoading=true;
-      this.error = error.Message;
-      this.notificationService.showError(this.error, "Error");
+      this.isLoading=false;
+      this.error = error.error.Message;
+      console.log(error);
     })
   }
 }
