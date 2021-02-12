@@ -14,15 +14,12 @@ export class ProfileDialogComponent implements OnInit {
 
   public form: FormGroup=new FormGroup({});
   public user: User=new User();
+  public error: boolean;
   public isLoading: boolean=false;
   constructor(public dialogRef: MatDialogRef<ProfileDialogComponent>, public dialog: MatDialog,
     private authService: AuthService) { 
       
     }
-
-  // onNoClick(): void {
-  //   this.dialogRef.close();
-  // }
 
   ngOnInit(): void {
     this.authService.getUserProfile().subscribe(res=>{
@@ -49,6 +46,7 @@ export class ProfileDialogComponent implements OnInit {
       this.dialogRef.close();
     }, error=>{
       this.isLoading=false;
+      this.error=error.error.Message;
       console.log(error);
     })
   }
