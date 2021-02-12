@@ -1,0 +1,20 @@
+<app-layout>
+  <mat-toolbar class="page-header" role="heading">
+    <h4>Dashboard<mat-icon class="search-icon">clear</mat-icon>
+    </h4>
+  </mat-toolbar>
+
+  <div class="wrapper">
+    <mat-card class="custom-grid">
+      <div class="connections-form">
+        <dockme-connections-form></dockme-connections-form>
+      </div>
+      <div class="mapping-grid">
+        <dockmee-mapping-table [materialTableDate]="materialTableData$ | async"></dockmee-mapping-table>
+      </div>
+    </mat-card>
+  </div>
+
+
+  <app-footer></app-footer>
+</app-layout>

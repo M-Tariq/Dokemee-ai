@@ -1,0 +1,33 @@
+@import "src/app/styles/global";
+@import "src/app/styles/font";
+
+.table-wrapper {
+  min-height: 79vh;
+}
+:host {
+  .page-header {
+    padding-top: 0px;
+    width: 159px;
+    background: #ffffff;
+    margin-left: 24px;
+    padding: 5px 10px;
+    h4 {
+      font-size: 16px;
+      color: #cf3339;
+      font-family: "Segoe Semi Bold";
+      font-weight: 600;
+      width: 100%;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      .mat-icon {
+        padding: 0px;
+        margin-left: 10px;
+        cursor: pointer;
+        font-size: 22px;
+        color: #535353;
+      }
+    }
+  }
+}

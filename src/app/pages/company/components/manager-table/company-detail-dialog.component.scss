@@ -1,0 +1,126 @@
+:host{
+  .company-detail-dialong {
+    h2.mat-dialog-title {
+      font-size: 22px;
+      color: #535353;
+      font-family: "Segoe Semi Bold";
+      text-transform: uppercase;
+      margin-bottom: 57px;
+    }
+  
+    .mat-dialog-content {
+      max-height: 100vh;
+      .content-header {
+        display: flex;
+        border-bottom: 2px dashed rgba(84, 84, 84, 0.60);
+        min-height: 50px;
+        align-items: center;
+        margin-bottom: 30px;
+        .title {
+          width: 60%;
+          h2{
+            font-size: 20px;
+            font-family: "Segoe UI";
+            margin-bottom: 0px;
+          }
+        }
+        .action {
+          width: 40%;
+          font-size: 15px;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          cursor: pointer;
+          a{
+            font-size: 15px;
+            color: #002B8F;
+            font-family: "Segoe UI";
+          }
+        }
+      }
+      mat-list {
+        list-style-type: none;
+        padding-left: 0px;
+        mat-list-item {
+          display: flex;
+          margin-bottom: 10px;
+          align-items: center;
+          img {
+            height: 20px;
+            margin: 0px 15px;
+          }
+
+          .content {
+            label {
+              font-size: 13px;
+              color: #535353;
+              opacity: 0.6;
+              text-transform: capitalize;
+              font-family: "Segoe UI";
+            }
+            h5 {
+              font-size: 18px;
+              margin-bottom: 0px;
+              font-family: "Segoe UI";
+            }
+            .expiration-date {
+              display: flex;
+              align-items: center;
+              border: 1px solid #B7C1C8;
+              border-radius: 8px;
+              justify-content: flex-start;
+              padding: 5px;
+              span{
+                width: 80%;
+                font-size: 18px;
+              }
+              img{
+                height: 20px;
+                margin: 0px 10px;
+              }
+            }
+            .doc-per-month{
+              font-size: 18px;
+              font-family: "Segoe UI";
+              display: flex;
+              align-items: center;
+              
+              .total{
+                padding: 5px;
+                border: 1px solid #B7C1C8;
+                border-radius: 8px;
+                margin-left: 5px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .mat-dialog-actions{
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+  .cancel-btn{
+    height: 30px;
+    line-height: 30px;
+    border-radius: 8px;
+    background: #CD3538;
+    width: 100px;
+    color: #ffffff;
+    font-family: "Segoe Semi Bold";
+    font-size: 14px;
+    margin-right: 20px;
+  } 
+  .save-btn{
+    height: 30px;
+    line-height: 30px;
+    border-radius: 8px;
+    background: #028A0F;
+    width: 100px;
+    color: #ffffff;
+    font-family: "Segoe Semi Bold";
+    font-size: 14px;
+  } 
+}

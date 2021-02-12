@@ -1,0 +1,178 @@
+{
+  "radio": {
+    "dragElement": "add_radio",
+    "control": {
+      "controlPlaceholder": "BUILDER.RADIO.CONTROL_PLACEHOLDER",
+      "label": "BUILDER.RADIO.SUBJECT_HERE",
+      "required": false,
+      "type": "radio",
+      "options": [
+        {
+          "label": "BUILDER.RADIO.LABEL_1",
+          "value": "BUILDER.RADIO.LABEL_1",
+          "checked": false
+        },
+        {
+          "label": "BUILDER.RADIO.LABEL_2",
+          "value": "BUILDER.RADIO.LABEL_2",
+          "checked": false
+        }
+      ],
+      "value": "",
+      "Setting": {
+        "FontSize": "16",
+        "FontWeight": "normal",
+        "FontColor": "rgba(0,0,0,1)",
+        "IsUnderline": false,
+        "IsItalic": false
+      }
+    }
+  },
+  "media": {
+    "dragElement": "add_media",
+    "control": {
+      "controlPlaceholder": "BUILDER.MEDIA.CONTROL_PLACEHOLDER",
+      "type": "image",
+      "FileId": "",
+      "url": "",
+      "size": {
+        "width": 200,
+        "height": 200
+      },
+      "align": "left",
+      "Setting": {
+      }
+    }
+  },
+  "text": {
+    "dragElement": "add_text",
+    "control": {
+      "controlPlaceholder": "BUILDER.INPUT.CONTROL_PLACEHOLDER",
+      "input_type": "text",
+      "type": "input_text",
+      "options": [
+        {
+          "label": "BUILDER.INPUT.FIRST_NAME",
+          "required": false,
+          "value": "",
+          "type": "text"
+        },
+        {
+          "label": "BUILDER.INPUT.LAST_NAME",
+          "required": false,
+          "value": "",
+          "type": "text"
+        }
+      ],
+      "Setting": {
+        "FontSize": "16",
+        "FontWeight": "normal",
+        "FontColor": "rgba(0,0,0,1)",
+        "IsUnderline": false,
+        "IsItalic": false
+      }
+    }
+  },
+  "list": {
+    "dragElement": "add_list",
+    "control": {
+      "controlPlaceholder": "BUILDER.MULTIPLE_SELECTION.CONTROL_PLACEHOLDER",
+      "type": "checkbox list",
+      "required": false,
+      "multipleSelection": false,
+      "label": "BUILDER.MULTIPLE_SELECTION.LABEL",
+      "options": [
+        {
+          "label": "BUILDER.MULTIPLE_SELECTION.NAME_1",
+          "value": "BUILDER.MULTIPLE_SELECTION.NAME_1",
+          "checked": false
+        },
+        {
+          "label": "BUILDER.MULTIPLE_SELECTION.NAME_2",
+          "value": "BUILDER.MULTIPLE_SELECTION.NAME_2",
+          "checked": false
+        }
+      ],
+      "value": "",
+      "Setting": {
+        "FontSize": "16",
+        "FontWeight": "normal",
+        "FontColor": "rgba(0,0,0,1)",
+        "IsUnderline": false,
+        "IsItalic": false
+      }
+    }
+  },
+  "signature": {
+    "dragElement": "add_signature",
+    "control": {
+      "controlPlaceholder": "BUILDER.SIGNATURE.CONTROL_PLACEHOLDER",
+      "type": "signature",
+      "sub_type": "hand",
+      "FileId": "",
+      "value": "",
+      "url": "./assets/images/user-placeholder.png",
+      "size": {
+        "width": 150,
+        "height": 150
+      },
+      "align": "center",
+      "Setting": {
+      }
+    }
+  },
+  "buttons": {
+    "dragElement": "add_buttons",
+    "control": {
+      "controlPlaceholder": "BUILDER.BUTTONS.CONTROL_PLACEHOLDER",
+      "type": "buttons",
+      "layout": "row",
+      "align": "left",
+      "options": [
+        {
+          "type": "custom",
+          "label": "BUILDER.BUTTONS.CUSTOM_BUTTON_LABEL",
+          "link": "https://www.google.com",
+          "color": "#cf3339"
+        },
+        {
+          "type": "custom",
+          "label": "BUILDER.BUTTONS.CUSTOM_BUTTON_LABEL",
+          "link": "https://www.google.com",
+          "color": "#cf3339"
+        }
+      ],
+      "Setting": {
+        "FontSize": "14",
+        "FontWeight": "normal",
+        "FontColor": "rgba(255,255,255,1)",
+        "IsUnderline": false,
+        "IsItalic": false
+      }
+    }
+  },
+  "attachment": {
+    "dragElement": "add_attachment",
+    "control": {
+      "controlPlaceholder": "BUILDER.ATTACHMENT.CONTROL_PLACEHOLDER",
+      "type": "attachment",
+      "layout": "row",
+      "align": "left",
+      "options": [
+        {
+          "DisplayText": "BUILDER.ATTACHMENT.UPLOAD_BUTTON",
+          "Types": [],
+          "MaxFiles": 2,
+          "MaxSize": 20
+        }
+      ],
+      "Setting": {
+        "FontSize": "14",
+        "FontWeight": "normal",
+        "FontColor": "rgba(255,255,255,1)",
+        "IsUnderline": false,
+        "IsItalic": false
+      }
+    }
+  }
+}

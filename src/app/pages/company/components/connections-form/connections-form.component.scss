@@ -1,0 +1,60 @@
+@import "src/app/styles/colors";
+@import "src/app/styles/variables";
+@import "src/app/styles/font";
+
+:host {
+  .title {
+    font-size: 20px;
+    color: #535353;
+    font-family: "Segoe Semi Bold";
+    margin-bottom: 32px;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    input {
+      height: 43px;
+      border-radius: 8px;
+      padding: 0px 10px;
+      border: 1px solid #b7c1c8;
+      max-width: 318px;
+      margin-bottom: 10px;
+      ~ .mat-form-field-label-wrapper {
+        label {
+          mat-label {
+            font-family: "Segoe Semi Bold";
+          }
+        }
+      }
+    }
+  }
+
+  // for ipad
+  @media only screen and (min-width: 1024px) and (max-height: 1366px) and (-webkit-min-device-pixel-ratio: 1.5) {
+    form {
+      width: 80%;
+      input {
+        width: 90%;
+      }
+    }
+  }
+  @media screen and (max-width: 1556) and (min-width: 1367) {
+    form {
+      width: 80%;
+      input {
+        width: 90%;
+      }
+    }
+  }
+}
+
+::ng-deep .mat-form-field-label-wrapper {
+  top: -45px;
+  label {
+    color: #535353 !important;
+    text-transform: capitalize;
+    opacity: 1;
+    font-size: 16px;
+    font-family: "Segoe Semi Bold";
+  }
+}

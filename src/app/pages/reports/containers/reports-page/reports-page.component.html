@@ -1,0 +1,170 @@
+<app-layout>
+  <mat-toolbar class="page-header" role="heading">
+    <h4>Reports<mat-icon class="search-icon">clear</mat-icon>
+    </h4>
+  </mat-toolbar>
+
+  <div class="table-wrapper">
+
+    <mat-card class="material-table">
+
+      <mat-card-title class="material-table__header">
+        <mat-toolbar>
+          <mat-list role="list" class="reports-header-info-list">
+            <mat-list-item role="listitem" class="title">Reports</mat-list-item>
+            <mat-list-item role="listitem" class="doc-limits"><span>Document Limits</span>
+              <mat-slide-toggle [(ngModel)]="documentSwitch">Expiration Date</mat-slide-toggle>
+            </mat-list-item>
+          </mat-list>
+
+          <span class="example-spacer"></span>
+
+          <mat-list role="list" class="reports-header-action-list">
+            <mat-list-item role="listitem">
+              <mat-form-field>
+                <mat-select [(value)]="selected" disableOptionCentering panelClass="allcompanies">
+                  <mat-option value="title">
+                    <mat-checkbox class="example-margin" indeterminate>All Companies</mat-checkbox>
+                  </mat-option>
+                  <mat-option value="option1">
+                    <mat-checkbox class="example-margin">Company 1</mat-checkbox>
+                  </mat-option>
+                  <mat-option value="option2">
+                    <mat-checkbox class="example-margin">Company 2</mat-checkbox>
+                  </mat-option>
+                  <mat-option value="option3">
+                    <mat-checkbox class="example-margin">Company 3</mat-checkbox>
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </mat-list-item>
+
+            <mat-list-item role="listitem">
+              <mat-form-field>
+                <mat-select [(value)]="selected" disableOptionCentering panelClass="allcabnits">
+                  <mat-option value="title">
+                    <mat-checkbox class="example-margin" indeterminate>Status</mat-checkbox>
+                  </mat-option>
+                  <mat-option value="option1">
+                    <mat-checkbox class="example-margin">Check me!</mat-checkbox>
+                  </mat-option>
+                  <mat-option value="option2">
+                    <mat-checkbox class="example-margin">Check me!</mat-checkbox>
+                  </mat-option>
+                  <mat-option value="option3">
+                    <mat-checkbox class="example-margin">Check me!</mat-checkbox>
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </mat-list-item>
+
+            <mat-list-item role="listitem" *ngIf="!documentSwitch">
+              <mat-form-field>
+                <mat-select [(value)]="selected" disableOptionCentering panelClass="allcabnits">
+                  <mat-option value="title">
+                    <mat-checkbox class="example-margin" indeterminate>Last 24 hours</mat-checkbox>
+                  </mat-option>
+                  <mat-option value="option1">
+                    <mat-checkbox class="example-margin">Check me!</mat-checkbox>
+                  </mat-option>
+                  <mat-option value="option2">
+                    <mat-checkbox class="example-margin">Check me!</mat-checkbox>
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </mat-list-item>
+
+            <mat-list-item role="listitem" *ngIf="documentSwitch">
+              <mat-form-field class="datepicker">
+                <input matInput [matDatepicker]="picker">
+                <mat-datepicker-toggle matSuffix [for]="picker">
+                  <img src="./assets/icons/calender.svg">
+                </mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+
+              <mat-form-field class="opretors-selection">
+                <mat-select [(value)]="selected" disableOptionCentering panelClass="operators">
+                  <mat-option value="title">
+                    >
+                  </mat-option>
+                  <mat-option value="option1">
+                    <mat-checkbox class="example-margin"> > </mat-checkbox>
+                  </mat-option>
+                  <mat-option value="option2">
+                    <mat-checkbox class="example-margin"> => </mat-checkbox>
+                  </mat-option>
+                  <mat-option value="option3">
+                    <mat-checkbox class="example-margin"> = </mat-checkbox>
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </mat-list-item>
+
+            <mat-list-item role="listitem">
+              <button mat-icon-button aria-label="" class="print-btn">
+                <img src="./assets/icons/printer.svg">
+              </button>
+              <button mat-icon-button aria-label="" class="download-btn">
+                <img src="./assets/icons/download.svg">
+              </button>
+            </mat-list-item>
+          </mat-list>
+
+
+        </mat-toolbar>
+      </mat-card-title>
+
+      <!-- table content -->
+
+      <mat-card-content class="material-table__content">
+        <mat-accordion>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!-- reports head componenet -->
+              <app-reports-head-table [materialTableDate]="loadReportsHeadTableData$ | async"></app-reports-head-table>
+            </mat-expansion-panel-header>
+
+            <div class="panel-body">
+              <app-reports-detail-table [materialTableDate]="loadReportsDetailTableData$ | async">
+              </app-reports-detail-table>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+
+        <mat-accordion>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!-- reports head componenet -->
+              <app-reports-head-table [materialTableDate]="loadReportsHeadTableData$ | async"></app-reports-head-table>
+            </mat-expansion-panel-header>
+
+            <div class="panel-body">
+              <app-reports-detail-table [materialTableDate]="loadReportsDetailTableData$ | async">
+              </app-reports-detail-table>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+        <mat-accordion>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <!-- reports head componenet -->
+              <app-reports-head-table [materialTableDate]="loadReportsHeadTableData$ | async"></app-reports-head-table>
+            </mat-expansion-panel-header>
+
+            <div class="panel-body">
+              <app-reports-detail-table [materialTableDate]="loadReportsDetailTableData$ | async">
+              </app-reports-detail-table>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+
+      </mat-card-content>
+
+      <!-- End of Table content -->
+    </mat-card>
+
+  </div>
+
+  <app-footer></app-footer>
+</app-layout>

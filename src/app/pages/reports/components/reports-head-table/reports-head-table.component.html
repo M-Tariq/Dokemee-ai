@@ -1,0 +1,105 @@
+<div class="table-wrapper">
+  <mat-table [dataSource]="dataSource">
+    <!-- Company Name Definition -->
+    <ng-container matColumnDef="companyname">
+      <mat-header-cell *matHeaderCellDef>Company Name</mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        <div class="media">
+          <img src="./assets/icons/company.svg">
+        </div>
+        <div class="content">
+          <h4 class="company-name">Comapny</h4>
+        </div>
+      </mat-cell>
+    </ng-container>
+
+    <!-- company Id Definition -->
+    <ng-container matColumnDef="companyId">
+      <mat-header-cell *matHeaderCellDef> Company Id </mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        <div class="content">
+          <label>Company ID</label>
+          <h4>456789123</h4>
+        </div>
+        <div class="media">
+          <img src="./assets/icons/company-id.svg">
+        </div>
+      </mat-cell>
+    </ng-container>
+
+    <!-- Expiration Date Definition -->
+    <ng-container matColumnDef="exp_date">
+      <mat-header-cell *matHeaderCellDef> Expiration Date </mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        <div class="content">
+          <label>Descriptions</label>
+          <h4>Dokmee default cabinet</h4>
+        </div>
+      </mat-cell>
+    </ng-container>
+
+    <!-- Exp Days Definition -->
+    <ng-container matColumnDef="exp_days">
+      <mat-header-cell *matHeaderCellDef> Subscription </mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        <div class="content">
+          <label>Subscription Expiration date</label>
+          <h4>04/20/2021</h4>
+        </div>
+      </mat-cell>
+    </ng-container>
+
+    <!-- Cabnit Definition -->
+    <ng-container matColumnDef="cabnit">
+      <mat-header-cell *matHeaderCellDef> Cabnit </mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        <div class="content">
+          <label>Documents</label>
+          <h4>4 of 10</h4>
+        </div>
+      </mat-cell>
+    </ng-container>
+
+    <!-- Doc Remaining Definition -->
+    <ng-container matColumnDef="doc_remaining">
+      <mat-header-cell *matHeaderCellDef> Doc Remaining </mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        <div class="content">
+          <label>Company Contact</label>
+          <h4>Carol Lucas</h4>
+        </div>
+      </mat-cell>
+    </ng-container>
+
+    <!-- Doc Processed Definition -->
+    <ng-container matColumnDef="doc_processed">
+      <mat-header-cell *matHeaderCellDef> Doc Processed </mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        <div class="content">
+          <label>Company Contact</label>
+          <h4>Carol Lucas</h4>
+        </div>
+      </mat-cell>
+    </ng-container>
+
+
+    <!-- Index Available Definition -->
+    <ng-container matColumnDef="index_available">
+      <mat-header-cell *matHeaderCellDef> Index Available </mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        <div class="content">
+          <label>Company Contact</label>
+          <h4>Carol Lucas</h4>
+        </div>
+      </mat-cell>
+    </ng-container>
+
+    <!-- Header and Row Declarations -->
+    <mat-header-row
+      *matHeaderRowDef="['companyname', 'companyId', 'exp_date', 'exp_days', 'cabnit', 'doc_remaining','doc_processed','index_available']">
+    </mat-header-row>
+    <mat-row
+      *matRowDef="let row; columns: ['companyname', 'companyId', 'exp_date', 'exp_days', 'cabnit', 'doc_remaining','doc_processed','index_available']">
+    </mat-row>
+  </mat-table>
+</div>

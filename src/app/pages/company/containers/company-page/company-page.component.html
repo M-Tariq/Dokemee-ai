@@ -1,0 +1,11 @@
+<app-layout>
+  <mat-toolbar class="page-header" role="heading">
+    <h4>Dashboard<mat-icon class="search-icon">clear</mat-icon></h4>
+  </mat-toolbar>
+
+  <div class="table-wrapper">
+    <manager-table [materialTableDate]="materialTableData$ | async"></manager-table>
+  </div>
+
+  <app-footer></app-footer>
+</app-layout>

@@ -1,0 +1,184 @@
+@import "src/app/styles/colors";
+@import "src/app/styles/font";
+@import "src/app/styles/variables";
+
+:host {
+  .mapping-table {
+    margin-top: 0px;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: none;
+
+    &__header {
+      font-size: 20px;
+      color: #535353;
+      font-family: "Segoe Semi Bold";
+      margin-bottom: 32px;
+    }
+
+    .mat-card-title {
+      display: flex;
+      h5 {
+        font-size: 20px;
+        color: #535353;
+        font-family: "Segoe Semi Bold";
+        margin-bottom: 32px;
+        width: calc(100% - 318px);
+      }
+      form {
+        width: 318px;
+        .batch-profile {
+          width: 99%;
+          mat-select {
+            width: 208px;
+            display: block;
+            padding: 0px;
+            height: 43px;
+
+            input {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    .mat-table {
+      width: 65%;
+      margin: auto;
+      mat-header-row {
+        border: none;
+        min-height: 20px;
+        mat-header-cell {
+          padding: 0px !important;
+          font-size: 15px;
+          color: #002b8f;
+          font-family: "Segoe Semi Bold";
+        }
+      }
+
+      mat-row.mat-row {
+        margin: 10px 0px;
+        border: none;
+        mat-cell.mat-cell {
+          padding: 5px 10px 5px 0px;
+          height: 50px;
+          mat-form-field {
+            input {
+              border: 1px solid #b7c1c8;
+              height: 43px;
+              border-radius: 8px;
+              padding-left: 10px;
+              width: auto;
+            }
+          }
+          button {
+            margin: 0px 10px;
+          }
+        }
+      }
+    }
+
+    mat-card-footer {
+      margin-top: 20px;
+      width: 85%;
+      margin: auto;
+      display: flex;
+      justify-content: flex-end;
+      mat-card-actions {
+        margin-bottom: 0px;
+        button {
+        }
+      }
+      .cancel-btn {
+        height: 30px;
+        line-height: 30px;
+        border-radius: 8px;
+        background: #cd3538;
+        width: 100px;
+        color: #ffffff;
+        font-family: "Segoe Semi Bold";
+        font-size: 14px;
+        margin-right: 20px;
+      }
+      .save-btn {
+        height: 30px;
+        line-height: 30px;
+        border-radius: 8px;
+        background: #028a0f;
+        width: 100px;
+        color: #ffffff;
+        font-family: "Segoe Semi Bold";
+        font-size: 14px;
+      }
+    }
+  }
+  .wrapper {
+    min-height: 79vh;
+  }
+
+  // for ipad
+  @media only screen and (min-width: 1024px) and (max-height: 1366px) and (-webkit-min-device-pixel-ratio: 1.5) {
+    .mapping-table {
+      .mat-card-title {
+        h5 {
+          width: 50%;
+        }
+        form {
+          width: 240px;
+        }
+      }
+      .mat-table {
+        width: 100%;
+        mat-row.mat-row {
+          mat-cell.mat-cell {
+            &:first-child {
+              max-width: 200px;
+            }
+            button {
+              margin: 0px 10px;
+              + button {
+                margin: 0px;
+                img {
+                  height: 20px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 1556) and (min-width: 1367) {
+    .mapping-table {
+      .mat-card-title {
+        h5 {
+          width: 50%;
+        }
+        form {
+          width: 240px;
+        }
+      }
+      .mat-table {
+        width: 100%;
+        mat-row.mat-row {
+          mat-cell.mat-cell {
+            &:first-child {
+              max-width: 200px;
+            }
+            button {
+              margin: 0px 10px;
+              + button {
+                margin: 0px;
+                img {
+                  height: 20px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

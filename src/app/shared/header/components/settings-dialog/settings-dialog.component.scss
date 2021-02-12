@@ -1,0 +1,115 @@
+:host {
+    .profile-dialog {
+      h2.mat-dialog-title {
+        font-size: 22px;
+        color: #535353;
+        font-family: "Segoe Semi Bold";
+        text-transform: uppercase;
+        margin-bottom: 40px;
+      }
+  
+      .mat-dialog-content {
+        max-height: 100vh;
+        padding: 20px;
+        .user-image {
+          width: 200px;
+          margin: auto;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          .media {
+            img {
+              height: 121px;
+              width: 121px;
+              border-radius: 50%;
+            }
+          }
+          .content{
+            h2{
+              font-size: 22px;
+              color: #535353;
+              font-family: "Segoe UI";
+            }
+          }
+        }
+        form {
+          display: flex;
+          justify-content: flex-start;
+          flex-direction: column;
+          mat-form-field {
+            width: 100%;
+            .mat-form-field-wrapper {
+              margin-bottom: 10px;
+            }
+            input {
+              width: 100%;
+              border-radius: 8px;
+              border: 1px solid #b7c1c8;
+              height: 43px;
+            }
+          }
+          .change-pass{
+            height: 30px;
+            line-height: 30px;
+            width: 145px;
+            border-radius: 8px;
+            background: #CD3538;
+            color: #ffffff;
+          }
+        }
+      }
+  
+      .mat-dialog-actions {
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+    .cancel-btn {
+      height: 30px;
+      line-height: 30px;
+      border-radius: 8px;
+      background: #cd3538;
+      width: 100px;
+      color: #ffffff;
+      font-family: "Segoe Semi Bold";
+      font-size: 14px;
+      margin-right: 20px;
+    }
+    .save-btn {
+      height: 30px;
+      line-height: 30px;
+      border-radius: 8px;
+      background: #028a0f;
+      width: 100px;
+      color: #ffffff;
+      font-family: "Segoe Semi Bold";
+      font-size: 14px;
+    }
+  }
+  
+  
+.loading-indicator {
+  position: fixed;
+  z-index: 999;
+  height: 2em;
+  width: 2em;
+  overflow: show;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+/* Transparent Overlay */
+.loading-indicator:before {
+  content: '';
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.3);
+}

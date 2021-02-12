@@ -1,0 +1,101 @@
+@import "src/app/styles/colors";
+@import "src/app/styles/font";
+@import "src/app/styles/variables";
+:host {
+  .mat-list-base {
+    &.asside_icon_list {
+      width: $sidebar-width;
+      background: #6e7f80;
+      height: calc(100vh - 0px);
+      position: fixed;
+      left: 0;
+      padding: 0px;
+      overflow: hidden;
+      .mat-list-item {
+        display: flex;
+        cursor: pointer;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        &:focus {
+          outline: none;
+        }
+        &.menue-action {
+          height: 70px;
+        }
+
+        &.active {
+          & .mat-icon {
+            color: $sidebar-icon-color-active;
+          }
+
+          & .circle {
+            background-color: $sidebar-icon-color-active;
+          }
+        }
+      }
+    }
+
+    &.asside_expended_content {
+      position: fixed;
+      background: #ffffff;
+      box-shadow: 0px 3px 6px #0000000d;
+      z-index: 9;
+      width: 230px;
+      height: 100vh;
+      top: 70px;
+      padding: 0px;
+      left: -300px;
+      .mat-list-item {
+        font-size: 15px;
+        font-family: "Segoe Semi Bold";
+        color: #707070;
+        cursor: pointer;
+        position: relative;
+        &.active {
+          color: #cf3339;
+          &:before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid #ffffff;
+            left: -13px;
+            top: 20px;
+            transform: rotate(-90deg);
+          }
+        }
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+  @media (max-width: $small) {
+    .mat-list-base {
+      width: 60px;
+    }
+  }
+}
+
+.asside-expended {
+  .mat-list-base {
+    width: 300px !important;
+  }
+}
+
+::ng-deep .asside-expended {
+  .asside_expended_content {
+    left: 75px !important;
+  }
+  .layout-content {
+    padding-left: 315px;
+  }
+}

@@ -1,0 +1,149 @@
+<app-layout>
+  <mat-toolbar class="page-header" role="heading">
+    <h4>Admin User<mat-icon class="search-icon">clear</mat-icon>
+    </h4>
+  </mat-toolbar>
+
+
+  <div class="wrapper">
+    <mat-card>
+
+      <mat-card-title class="material-table__header">
+        <mat-list role="list">
+          <mat-list-item role="listitem">
+            <mat-select [(value)]="selected" disableOptionCentering panelClass="status-selction">
+              <mat-option value="title">
+                <mat-checkbox class="example-margin" indeterminate>All Cabnit</mat-checkbox>
+              </mat-option>
+              <mat-option value="option1">
+                <mat-checkbox class="example-margin">Check me!</mat-checkbox>
+              </mat-option>
+              <mat-option value="option2">
+                <mat-checkbox class="example-margin">Check me!</mat-checkbox>
+              </mat-option>
+              <mat-option value="option3">
+                <mat-checkbox class="example-margin">Check me!</mat-checkbox>
+              </mat-option>
+            </mat-select>
+          </mat-list-item>
+
+          <mat-list-item role="listitem">
+            <div class="search">
+              <mat-icon class="search-icon">search</mat-icon>
+              <input class="search-input" placeholder="Search...">
+            </div>
+          </mat-list-item>
+
+          <mat-list-item role="listitem" *ngIf="ElementSwitch">
+            <button mat-icon-button class="edit-icon" [matMenuTriggerFor]="menu">
+              <img src="./assets/icons/add-user.svg">
+            </button>
+            <mat-menu #menu="matMenu" [overlapTrigger]="false">
+              <form class="company-edit-form">
+                <mat-form-field class="form__input" floatLabel="never" (click)="$event.stopPropagation();">
+                  <mat-label>Name</mat-label>
+                  <input matInput placeholder="Name" type="text" formControlName="Name">
+                </mat-form-field>
+
+                <mat-form-field class="form__input" floatLabel="never" (click)="$event.stopPropagation();">
+                  <mat-label>Descriptions</mat-label>
+                  <input matInput placeholder="Name" type="text" formControlName="Name">
+                </mat-form-field>
+
+                <mat-form-field class="form__input" floatLabel="never" (click)="$event.stopPropagation();">
+                  <mat-label>Company Contact</mat-label>
+                  <input matInput placeholder="Name" type="text" formControlName="Name">
+                </mat-form-field>
+
+                <mat-form-field class="form__input" floatLabel="never" (click)="$event.stopPropagation();">
+                  <mat-label>Email</mat-label>
+                  <input matInput placeholder="Name" type="text" formControlName="Name">
+                </mat-form-field>
+
+                <mat-form-field class="form__input" floatLabel="never" (click)="$event.stopPropagation();">
+                  <mat-label>Max Documents per month</mat-label>
+                  <input matInput placeholder="Name" type="text" formControlName="Name">
+                </mat-form-field>
+
+                <mat-form-field class="datepicker" floatLabel="never" (click)="$event.stopPropagation();">
+                  <mat-label>Subscription Expiration date</mat-label>
+                  <input matInput [matDatepicker]="picker">
+                  <mat-datepicker-toggle matSuffix [for]="picker">
+                    <img src="./assets/icons/calender.svg">
+                  </mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+
+
+                <div class="action-btn">
+                  <button mat-raised-button class="cancel-btn">Cancel</button>
+                  <button mat-raised-button class="save-btn">Ok</button>
+                </div>
+              </form>
+            </mat-menu>
+          </mat-list-item>
+
+          <mat-list-item role="listitem" *ngIf="!ElementSwitch">
+            <button mat-icon-button class="edit-icon" [matMenuTriggerFor]="menu">
+              <img src="./assets/icons/edit-company.svg">
+            </button>
+            <mat-menu #menu="matMenu" [overlapTrigger]="false">
+              <form class="company-edit-form">
+                <mat-form-field class="form__input" floatLabel="never" (click)="$event.stopPropagation();">
+                  <mat-label>Name</mat-label>
+                  <input matInput placeholder="Name" type="text" formControlName="Name">
+                </mat-form-field>
+
+                <mat-form-field class="form__input" floatLabel="never" (click)="$event.stopPropagation();">
+                  <mat-label>Descriptions</mat-label>
+                  <input matInput placeholder="Name" type="text" formControlName="Name">
+                </mat-form-field>
+
+                <mat-form-field class="form__input" floatLabel="never" (click)="$event.stopPropagation();">
+                  <mat-label>Company Contact</mat-label>
+                  <input matInput placeholder="Name" type="text" formControlName="Name">
+                </mat-form-field>
+
+                <mat-form-field class="form__input" floatLabel="never" (click)="$event.stopPropagation();">
+                  <mat-label>Email</mat-label>
+                  <input matInput placeholder="Name" type="text" formControlName="Name">
+                </mat-form-field>
+
+                <mat-form-field class="form__input" floatLabel="never" (click)="$event.stopPropagation();">
+                  <mat-label>Max Documents per month</mat-label>
+                  <input matInput placeholder="Name" type="text" formControlName="Name">
+                </mat-form-field>
+
+                <mat-form-field class="datepicker" floatLabel="never" (click)="$event.stopPropagation();">
+                  <mat-label>Subscription Expiration date</mat-label>
+                  <input matInput [matDatepicker]="picker">
+                  <mat-datepicker-toggle matSuffix [for]="picker">
+                    <img src="./assets/icons/calender.svg">
+                  </mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+
+
+                <div class="action-btn">
+                  <button mat-raised-button class="cancel-btn">Cancel</button>
+                  <button mat-raised-button class="save-btn">Ok</button>
+                </div>
+              </form>
+            </mat-menu>
+          </mat-list-item>
+        </mat-list>
+      </mat-card-title>
+
+      <mat-tab-group (selectedTabChange)="EditMenueSwitch($event)">
+        <mat-tab label="Company Manger">
+          <manager-table [materialTableDate]="materialTableData$ | async"></manager-table>
+        </mat-tab>
+        <mat-tab label="User">
+          <admin-user-table [materialUserTableData]="materialUserTableData$ | async"></admin-user-table>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-card>
+  </div>
+
+  <app-footer></app-footer>
+</app-layout>

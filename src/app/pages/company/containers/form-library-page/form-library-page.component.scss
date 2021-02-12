@@ -1,0 +1,82 @@
+@import "src/app/styles/global";
+@import "src/app/styles/font";
+
+:host {
+  .wrapper {
+    min-height: 79vh;
+  }
+  .page-header {
+    padding-top: 0px;
+    width: 159px;
+    background: #ffffff;
+    margin-left: 24px;
+    padding: 5px 10px;
+    h4 {
+      font-size: 16px;
+      color: #cf3339;
+      font-family: "Segoe Semi Bold";
+      font-weight: 600;
+      width: 100%;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      .mat-icon {
+        padding: 0px;
+        margin-left: 10px;
+        cursor: pointer;
+        font-size: 22px;
+        color: #535353;
+      }
+    }
+  }
+
+  .custom-grid {
+    display: flex;
+    margin: 23px;
+    padding: 34px;
+
+    .connections-form {
+      width: 30%;
+      position: relative;
+      &:after {
+        content: "";
+        width: 1px;
+        height: 100%;
+        position: absolute;
+        right: 30px;
+        top: 0;
+        background: #707070;
+        opacity: 0.8;
+      }
+    }
+
+    .mapping-grid {
+      width: 70%;
+    }
+  }
+
+  // for ipad
+  @media only screen and (min-width: 1024px) and (max-height: 1366px) and (-webkit-min-device-pixel-ratio: 1.5) {
+    .custom-grid {
+      .connections-form {
+        width: 35%;
+      }
+
+      .mapping-grid {
+        width: 65%;
+      }
+    }
+  }
+  @media screen and (max-width: 1556) and (min-width: 1367) {
+    .custom-grid {
+      .connections-form {
+        width: 35%;
+      }
+
+      .mapping-grid {
+        width: 65%;
+      }
+    }
+  }
+}

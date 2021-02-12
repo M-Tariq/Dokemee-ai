@@ -1,0 +1,189 @@
+@import "src/app/styles/global";
+@import "src/app/styles/colors";
+@import "src/app/styles/font";
+@import "src/app/styles/variables";
+
+.table-wrapper {
+  min-height: 79vh;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+:host {
+  .page-header {
+    padding-top: 0px;
+    width: 159px;
+    background: #ffffff;
+    margin-left: 24px;
+    padding: 5px 10px;
+    h4 {
+      font-size: 16px;
+      color: #cf3339;
+      font-family: "Segoe Semi Bold";
+      font-weight: 600;
+      width: 100%;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .mat-icon {
+        padding: 0px;
+        margin-left: 10px;
+        cursor: pointer;
+        font-size: 22px;
+        color: #535353;
+      }
+    }
+  }
+
+  app-reports-head-table {
+    width: 100%;
+  }
+
+  .material-table {
+    margin-top: 24px;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0 3px 11px 0 $shadow-white, 0 3px 3px -2px $shadow-grey, 0 1px 8px 0 $shadow-dark-grey;
+
+    &__header {
+      color: $grey;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      padding: 0px 0px;
+      min-height: 90px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #c5c5c5;
+      mat-toolbar {
+        background: none;
+
+        .reports-header-info-list {
+          display: flex;
+          mat-list-item {
+            &.title {
+              position: relative;
+              font-size: 20px;
+              color: #535353;
+              font-family: "Segoe UI";
+              text-transform: capitalize;
+              &:after {
+                content: "";
+                position: absolute;
+                height: 80%;
+                width: 2px;
+                background: #c5c5c5;
+                right: 0;
+                margin: auto;
+                top: 5px;
+              }
+            }
+            &.doc-limits {
+              span {
+                font-size: 16px;
+                color: #6e7f80;
+                font-family: "Segoe Semi Bold";
+              }
+            }
+          }
+        }
+
+        .reports-header-action-list {
+          display: flex;
+          align-items: center;
+          mat-list-item {
+            button {
+              margin: 0px 5px;
+              height: 30px;
+              width: 30px;
+              margin-top: -10px;
+            }
+          }
+          .mat-form-field-flex {
+            mat-select {
+              width: 100%;
+              display: block;
+              height: 30px;
+              ~ .mat-form-field-label-wrapper {
+                display: none;
+              }
+            }
+          }
+        }
+
+        .mat-slide-toggle {
+          margin-left: 10px;
+        }
+      }
+    }
+
+    .material-table__content {
+      padding: 20px 35px;
+    }
+
+    mat-accordion {
+      mat-expansion-panel {
+        box-shadow: none;
+        border: 1px solid #c5c5c5;
+        margin-bottom: 15px;
+        mat-expansion-panel-header {
+          height: auto;
+          padding: 0px 20px 0px 0px;
+          &:hover {
+            background: none;
+          }
+        }
+      }
+    }
+  }
+
+  // for ipad
+  @media only screen and (min-width: 1024px) and (max-height: 1366px) and (-webkit-min-device-pixel-ratio: 1.5) {
+    .material-table {
+      &__header {
+        mat-toolbar {
+          flex-direction: column;
+          height: auto;
+          align-items: flex-start;
+          .reports-header-action-list {
+            mat-list {
+              mat-list-item {
+                &:last-child {
+                  .mat-list-item-content {
+                    padding: 0px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 1556) and (min-width: 1367) {
+    .material-table {
+      &__header {
+        mat-toolbar {
+          flex-direction: column;
+          height: auto;
+          align-items: flex-start;
+          .reports-header-action-list {
+            mat-list {
+              mat-list-item {
+                &:last-child {
+                  .mat-list-item-content {
+                    padding: 0px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
