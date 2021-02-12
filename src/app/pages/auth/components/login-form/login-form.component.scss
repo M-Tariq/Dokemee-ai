@@ -17,9 +17,9 @@
     &__input {
       display: block;
       width: 100%;
-      padding: 0 0.75rem 0 1.5rem;
+      padding: 0 0.75rem 0 1rem;
       height: 53px;
-      margin: 20px 0px;
+      margin: 20px 0px 30px 0px;
       font-size: 1rem;
       line-height: 1.5;
       color: #141414;
@@ -43,6 +43,7 @@
       height: 52px;
       border-radius: 8px;
       background: $red;
+      color: #ffffff;
       width: 100%;
       font-weight: $fw-bold;
       font-family: "Segoe Semi Bold";

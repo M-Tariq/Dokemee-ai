@@ -1,32 +1,32 @@
-<div class="profile-dialog">
+<div class="setting-dialog">
   <mat-spinner *ngIf="isLoading" class="loading-indicator"></mat-spinner>
   <h2 mat-dialog-title>Settings (SMTP)</h2>
   <form [formGroup]="form" (ngSubmit)="onSubmit">
     <mat-dialog-content>
       <form>
-        <mat-form-field class="form__input" floatLabel="always">
+        <mat-form-field class="form__input" floatLabel="never">
           <mat-label>Mail Server</mat-label>
           <input matInput placeholder="Name" type="text" formControlName="mailServer" [(ngModel)]="smtpSetting.Server" required>
           <mat-error *ngIf="formControl.mailServer.invalid">Mail Server is required!</mat-error>
         </mat-form-field>
 
-        <mat-form-field class="form__input" floatLabel="always">
+        <mat-form-field class="form__input" floatLabel="never">
           <mat-label>Host</mat-label>
           <input matInput placeholder="Host" type="text" formControlName="host" [(ngModel)]="smtpSetting.Host" required>
           <mat-error *ngIf="formControl.host.invalid">Host is required</mat-error>
         </mat-form-field>
 
-        <mat-form-field class="form__input" floatLabel="always">
+        <mat-form-field class="form__input" floatLabel="never">
           <mat-label>Port</mat-label>
           <input matInput placeholder="Port" type="number" formControlName="port" [(ngModel)]="smtpSetting.Port" required>
           <mat-error *ngIf="formControl.port.invalid">Port is required!</mat-error>
         </mat-form-field>
-        <mat-form-field class="form__input" floatLabel="always">
+        <mat-form-field class="form__input" floatLabel="never">
           <mat-label>Email</mat-label>
           <input matInput placeholder="Email" type="email" formControlName="email" [(ngModel)]="smtpSetting.Email" required>
           <mat-error *ngIf="formControl.email.invalid">Email is invalid!</mat-error>
         </mat-form-field>
-        <mat-form-field class="form__input" floatLabel="always">
+        <mat-form-field class="form__input" floatLabel="never">
           <mat-label>Password</mat-label>
           <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'" formControlName="password" formControlName="password" [(ngModel)]="smtpSetting.Password" required>
           <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>

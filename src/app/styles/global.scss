@@ -346,3 +346,15 @@ mat-slide-toggle {
 .table-wrapper {
   overflow: auto;
 }
+
+.mat-form-field {
+  &.mat-form-field-invalid {
+    .mat-form-field-label {
+      color: #cf3339 !important;
+    }
+  }
+}
+
+mat-error.mat-error {
+  color: #cf3339 !important;
+}

@@ -38,7 +38,7 @@ import { IsLoggedInGuard } from './guards/is-logged-in.guard';
       preventDuplicates: true,
       timeOut: 5000,
       progressBar: true,
-      positionClass: 'toast-top-center',
+      positionClass: 'toast-bottom-right',
     }),
   ],
   

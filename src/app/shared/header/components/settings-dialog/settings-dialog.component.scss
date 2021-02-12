@@ -1,94 +1,91 @@
 :host {
-    .profile-dialog {
-      h2.mat-dialog-title {
-        font-size: 22px;
-        color: #535353;
-        font-family: "Segoe Semi Bold";
-        text-transform: uppercase;
-        margin-bottom: 40px;
-      }
-  
-      .mat-dialog-content {
-        max-height: 100vh;
-        padding: 20px;
-        .user-image {
-          width: 200px;
-          margin: auto;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          .media {
-            img {
-              height: 121px;
-              width: 121px;
-              border-radius: 50%;
-            }
-          }
-          .content{
-            h2{
-              font-size: 22px;
-              color: #535353;
-              font-family: "Segoe UI";
-            }
-          }
-        }
-        form {
-          display: flex;
-          justify-content: flex-start;
-          flex-direction: column;
-          mat-form-field {
-            width: 100%;
-            .mat-form-field-wrapper {
-              margin-bottom: 10px;
-            }
-            input {
-              width: 100%;
-              border-radius: 8px;
-              border: 1px solid #b7c1c8;
-              height: 43px;
-            }
-          }
-          .change-pass{
-            height: 30px;
-            line-height: 30px;
-            width: 145px;
-            border-radius: 8px;
-            background: #CD3538;
-            color: #ffffff;
-          }
-        }
-      }
-  
-      .mat-dialog-actions {
+  .setting-dialog {
+    h2.mat-dialog-title {
+      font-size: 22px;
+      color: #535353;
+      font-family: "Segoe Semi Bold";
+      text-transform: uppercase;
+      margin-bottom: 30px;
+    }
+
+    .mat-dialog-content {
+      max-height: 100vh;
+      padding: 20px;
+      .user-image {
+        width: 200px;
+        margin: auto;
         display: flex;
-        justify-content: flex-end;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .media {
+          img {
+            height: 121px;
+            width: 121px;
+            border-radius: 50%;
+          }
+        }
+        .content {
+          h2 {
+            font-size: 22px;
+            color: #535353;
+            font-family: "Segoe UI";
+          }
+        }
+      }
+      form {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        mat-form-field {
+          width: 100%;
+          input {
+            width: 90%;
+            border-radius: 8px;
+            border: 1px solid #b7c1c8;
+            height: 43px;
+            padding: 0px 10px;
+          }
+        }
+        .change-pass {
+          height: 30px;
+          line-height: 30px;
+          width: 145px;
+          border-radius: 8px;
+          background: #cd3538;
+          color: #ffffff;
+        }
       }
     }
-    .cancel-btn {
-      height: 30px;
-      line-height: 30px;
-      border-radius: 8px;
-      background: #cd3538;
-      width: 100px;
-      color: #ffffff;
-      font-family: "Segoe Semi Bold";
-      font-size: 14px;
-      margin-right: 20px;
-    }
-    .save-btn {
-      height: 30px;
-      line-height: 30px;
-      border-radius: 8px;
-      background: #028a0f;
-      width: 100px;
-      color: #ffffff;
-      font-family: "Segoe Semi Bold";
-      font-size: 14px;
+
+    .mat-dialog-actions {
+      display: flex;
+      justify-content: flex-end;
     }
   }
-  
-  
+  .cancel-btn {
+    height: 30px;
+    line-height: 30px;
+    border-radius: 8px;
+    background: #cd3538;
+    width: 100px;
+    color: #ffffff;
+    font-family: "Segoe Semi Bold";
+    font-size: 14px;
+    margin-right: 20px;
+  }
+  .save-btn {
+    height: 30px;
+    line-height: 30px;
+    border-radius: 8px;
+    background: #028a0f;
+    width: 100px;
+    color: #ffffff;
+    font-family: "Segoe Semi Bold";
+    font-size: 14px;
+  }
+}
+
 .loading-indicator {
   position: fixed;
   z-index: 999;
@@ -104,12 +101,35 @@
 
 /* Transparent Overlay */
 .loading-indicator:before {
-  content: '';
+  content: "";
   display: block;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.3);
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+::ng-deep {
+  &.setting-dialog {
+    .mat-form-field-wrapper {
+      padding-bottom: 20px !important;
+      .mat-form-field-suffix {
+        position: absolute;
+        right: 20px;
+        top: 30px;
+        cursor: pointer;
+      }
+      .mat-form-field-label-wrapper {
+        top: -40px;
+        label {
+          display: block;
+          font-size: 16px;
+          font-family: "Segoe Semi Bold";
+          color: #535353;
+        }
+      }
+    }
+  }
 }
