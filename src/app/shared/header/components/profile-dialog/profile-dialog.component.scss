@@ -1,8 +1,9 @@
 :host {
-  .mat-spinner{
+  .mat-spinner {
     width: 200px;
     max-height: 100vh;
   }
+
   .profile-dialog {
     h2.mat-dialog-title {
       font-size: 22px;
@@ -12,7 +13,6 @@
       margin-bottom: 0px;
     }
 
-  
     .mat-dialog-content {
       max-height: 100vh;
       padding: 20px;
@@ -30,8 +30,8 @@
             border-radius: 50%;
           }
         }
-        .content{
-          h2{
+        .content {
+          h2 {
             font-size: 22px;
             color: #535353;
             font-family: "Segoe UI";
@@ -44,23 +44,22 @@
         flex-direction: column;
         mat-form-field {
           width: 100%;
-          .mat-form-field-wrapper {
-            margin-bottom: 10px;
-          }
           input {
-            width: 100%;
+            width: 90%;
             border-radius: 8px;
             border: 1px solid #b7c1c8;
             height: 43px;
+            padding: 0px 10px;
           }
         }
-        .change-pass{
+        .change-pass {
           height: 30px;
           line-height: 30px;
           width: 145px;
           border-radius: 8px;
-          background: #CD3538;
+          background: #cd3538;
           color: #ffffff;
+          box-shadow: none;
         }
       }
     }
@@ -70,6 +69,7 @@
       justify-content: flex-end;
     }
   }
+
   .cancel-btn {
     height: 30px;
     line-height: 30px;
@@ -108,22 +108,36 @@
 
 /* Transparent Overlay */
 .loading-indicator:before {
-  content: '';
+  content: "";
   display: block;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.3);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
-
-
-.api_error{
-  margin-top: 8px;
-  align-items: center;
-  text-align: center;
-  vertical-align: middle;
-  color: crimson;
+::ng-deep {
+  &.profile-dialog {
+    .mat-form-field-wrapper {
+      padding-bottom: 20px !important;
+      .mat-form-field-suffix {
+        position: absolute;
+        right: 20px;
+        top: 30px;
+        cursor: pointer;
+      }
+      .mat-form-field-label-wrapper {
+        top: -20px;
+        label {
+          display: block;
+          font-size: 18px;
+          font-family: "Segoe Semi Bold";
+          color: #535353;
+        }
+      }
+    }
+  }
+  background-color: rgba(0, 0, 0, 0.3);
 }

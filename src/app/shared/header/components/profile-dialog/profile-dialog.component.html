@@ -16,14 +16,16 @@
       <form>
         <mat-form-field class="form__input" floatLabel="always">
           <mat-label>First name</mat-label>
-          <input matInput placeholder="firstName" type="text" formControlName="firstName" [(ngModel)]="user.FirstName" required>
+          <input matInput placeholder="firstName" type="text" formControlName="firstName" [(ngModel)]="user.FirstName"
+            required>
           <mat-error *ngIf="formControl.firstName.invalid">First name required!</mat-error>
 
         </mat-form-field>
 
         <mat-form-field class="form__input" floatLabel="always">
           <mat-label>Last name</mat-label>
-          <input matInput placeholder="lastName" type="text" formControlName="lastName" [(ngModel)]="user.LastName" required>
+          <input matInput placeholder="lastName" type="text" formControlName="lastName" [(ngModel)]="user.LastName"
+            required>
           <mat-error *ngIf="formControl.lastName.invalid">Last name required!</mat-error>
         </mat-form-field>
 
@@ -32,7 +34,8 @@
           <input matInput placeholder="Email" type="text" formControlName="email" [(ngModel)]="user.Email" required>
           <mat-error *ngIf="formControl.email.invalid">Email is invalid!</mat-error>
         </mat-form-field>
-        <a routerLink="change-password" [mat-dialog-close]="true" mat-raised-button class="change-pass">Change
+        <a [mat-dialog-close]="true" mat-raised-button class="change-pass"
+          (click)="OpenChangePasswordDialog()">Change
           Password</a>
       </form>
 
@@ -42,7 +45,8 @@
     </div>
     <mat-dialog-actions>
       <button mat-button mat-dialog-close tabindex="-1" class="cancel-btn">Cancel</button>
-      <button [disabled]="(formControl.firstName.invalid || formControl.lastName.invalid ||formControl.email.invalid)" mat-button tabindex="1" class="save-btn" type="submit">Save</button>
+      <button [disabled]="(formControl.firstName.invalid || formControl.lastName.invalid ||formControl.email.invalid)"
+        mat-button tabindex="1" class="save-btn" type="submit">Save</button>
     </mat-dialog-actions>
   </form>
 </div>
