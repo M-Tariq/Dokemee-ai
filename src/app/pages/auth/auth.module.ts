@@ -7,17 +7,20 @@ import { MatInputModule } from '@angular/material/input';
 import { AuthRoutingModule } from './auth-routing.module';
 import { LoginFormComponent } from './components';
 import { AuthPageComponent } from './containers';
+import { MatDialogModule } from '@angular/material/dialog';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { ChangePasswordComponent } from './components/change-password/change-password.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { MatIconModule } from '@angular/material/icon';
+import { ChangePasswordModalComponent } from './components/change-password-modal/change-password-modal.component';
 
 @NgModule({
   declarations: [
     AuthPageComponent,
     LoginFormComponent,
     ForgotPasswordComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    ChangePasswordModalComponent
   ],
   imports: [
     CommonModule,
@@ -25,6 +28,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatButtonModule,
     MatCheckboxModule,
     MatInputModule,
+    MatDialogModule,
     ReactiveFormsModule,
     FormsModule,
     SharedModule,
