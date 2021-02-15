@@ -130,13 +130,16 @@
           color: #535353;
         }
       }
+      .mat-form-field-subscript-wrapper {
+        margin-top: -5px !important;
+        width: 96%;
+      }
     }
   }
-  background-color: rgba(0,0,0,0.3);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
-
-.api_error{
+.api_error {
   margin-top: 16px;
   align-items: center;
   text-align: center;
