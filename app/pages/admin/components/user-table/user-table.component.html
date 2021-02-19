@@ -1,0 +1,105 @@
+<mat-card class="material-table" >
+  <mat-card-content class="material-table__content" *ngFor="let user of userList">
+    <mat-table [dataSource]="dataSource">
+
+      <!-- User name Definition -->
+      <ng-container matColumnDef="UserName">
+        <mat-header-cell *matHeaderCellDef>Company</mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          <div class="media">
+            <img src="./images/Ellipse 45.png">
+          </div>
+          <div class="content">
+            <h4 class="company-name">{{user.UserName | titlecase}}</h4>
+          </div>
+        </mat-cell>
+      </ng-container>
+
+      <!-- Age Definition -->
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef> Company Id </mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          <div class="content">
+            <label>First Name</label>
+            <h4>{{user.FirstName | titlecase}}</h4>
+          </div>
+
+        </mat-cell>
+      </ng-container>
+
+      <!-- Title Definition -->
+      <ng-container matColumnDef="description">
+        <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          <div class="content">
+            <label>Last Name</label>
+            <h4>{{user.LastName | titlecase}}</h4>
+          </div>
+        </mat-cell>
+      </ng-container>
+
+      <!-- Title Definition -->
+      <ng-container matColumnDef="subscription">
+        <mat-header-cell *matHeaderCellDef> Subscription </mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          <div class="content email">
+            <label>Email</label>
+            <h4>{{user.Email | lowercase}}</h4>
+          </div>
+        </mat-cell>
+      </ng-container>
+
+      <!-- Title Definition -->
+      <ng-container matColumnDef="documents">
+        <mat-header-cell *matHeaderCellDef> Documents </mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          <div class="content email">
+            <label>Created</label>
+            <h4>{{user.CreatedDate | date:'short'}}</h4>
+          </div>
+        </mat-cell>
+      </ng-container>
+
+      <!-- Title Definition -->
+      <ng-container class="status" matColumnDef="contacts">
+        <mat-header-cell *matHeaderCellDef> Contacts </mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          <div class="content status">
+            <label>Status</label>
+            <h4>{{user.Status | titlecase}}</h4>
+          </div>
+        </mat-cell>
+      </ng-container>
+
+      <!-- Title Definition -->
+      <ng-container matColumnDef="action">
+        <mat-header-cell *matHeaderCellDef> Action </mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          <button class="settings-button" mat-mini-fab [matMenuTriggerFor]="settings">
+            <mat-icon class="settings-button__icon">more_vert</mat-icon>
+          </button>
+          <div class="settings-menu">
+            <mat-menu #settings="matMenu" xPosition="before" yPosition="above">
+              <button class="settings-menu__item" mat-menu-item routerLink="{{routes.COMPANY_CONNECTIONS}}">View
+                Cabnit</button>
+            </mat-menu>
+          </div>
+        </mat-cell>
+      </ng-container>
+
+      <!-- Header and Row Declarations -->
+      <mat-header-row
+        *matHeaderRowDef="['UserName', 'id', 'description', 'subscription', 'documents', 'contacts','action']">
+      </mat-header-row>
+      <mat-row
+        *matRowDef="let row; columns: ['UserName', 'id', 'description', 'subscription', 'documents', 'contacts', 'action']">
+      </mat-row>
+    </mat-table>
+  </mat-card-content>
+
+  <mat-paginator *ngIf="userList.length>10" [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]">
+  </mat-paginator>
+
+</mat-card>
+
+<p *ngIf="userList.length===0" class="if_no_data">No data found!</p>

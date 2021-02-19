@@ -1,0 +1,99 @@
+<mat-card class="material-table">
+  <mat-card-title class="material-table__header">
+    <mat-list role="list">
+      <mat-list-item role="listitem">
+        <h5 class="material-table__title">
+          <mat-icon aria-hidden="false" aria-label="Example home icon">keyboard_backspace</mat-icon>
+          Connection <span>Company(1)</span>
+        </h5>
+
+        <div class="doc-limit">
+          <h4><span>Document Limit</span> 11/22</h4>
+        </div>
+      </mat-list-item>
+      <mat-list-item role="listitem"><a routerLink="{{routes.Company_Form_Library}}"><img
+            src="./images/icons/connection-icon.svg"></a></mat-list-item>
+    </mat-list>
+  </mat-card-title>
+
+  <mat-card-content class="material-table__content">
+    <div class="table-wrapper">
+      <mat-table [dataSource]="dataSource">
+        <!-- User name Definition -->
+        <ng-container matColumnDef="Company">
+          <mat-header-cell *matHeaderCellDef>Company</mat-header-cell>
+          <mat-cell *matCellDef="let row">
+            <div class="media">
+              <img src="./images/icons/furniture-and-household.svg">
+            </div>
+            <div class="content">
+              <h4 class="company-name">Comapny</h4>
+            </div>
+          </mat-cell>
+        </ng-container>
+
+        <!-- Age Definition -->
+        <ng-container matColumnDef="id">
+          <mat-header-cell *matHeaderCellDef> Company Id </mat-header-cell>
+          <mat-cell *matCellDef="let row">
+            <div class="content">
+              <label>Company ID</label>
+              <h4>56789123</h4>
+            </div>
+          </mat-cell>
+        </ng-container>
+
+        <!-- Title Definition -->
+        <ng-container matColumnDef="description">
+          <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+          <mat-cell *matCellDef="let row">
+            <div class="content">
+              <label>Descriptions</label>
+              <h4>Dokmee default cabinet</h4>
+            </div>
+          </mat-cell>
+        </ng-container>
+
+        <!-- Title Definition -->
+        <ng-container matColumnDef="subscription">
+          <mat-header-cell *matHeaderCellDef> Subscription </mat-header-cell>
+          <mat-cell *matCellDef="let row">
+            <div class="content">
+              <label>Subscription Expiration date</label>
+              <h4>04/20/2021</h4>
+            </div>
+          </mat-cell>
+        </ng-container>
+
+        <!-- Title Definition -->
+        <ng-container matColumnDef="documents">
+          <mat-header-cell *matHeaderCellDef> Documents </mat-header-cell>
+          <mat-cell *matCellDef="let row">
+            <div class="content">
+              <label>Documents</label>
+              <h4>4 of 10</h4>
+            </div>
+          </mat-cell>
+        </ng-container>
+
+        <!-- Title Definition -->
+        <ng-container matColumnDef="contacts">
+          <mat-header-cell *matHeaderCellDef> Contacts </mat-header-cell>
+          <mat-cell *matCellDef="let row">
+            <div class="content">
+              <label>Company Contact</label>
+              <h4>Carol Lucas</h4>
+            </div>
+          </mat-cell>
+        </ng-container>
+
+        <!-- Header and Row Declarations -->
+        <mat-header-row *matHeaderRowDef="['Company', 'id', 'description', 'subscription', 'documents', 'contacts']">
+        </mat-header-row>
+        <mat-row
+          *matRowDef="let row; columns: ['Company', 'id', 'description', 'subscription', 'documents', 'contacts']">
+        </mat-row>
+      </mat-table>
+    </div>
+  </mat-card-content>
+</mat-card>

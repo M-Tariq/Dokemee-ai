@@ -1,0 +1,51 @@
+<form class="company-edit-form" [formGroup]="form" (ngSubmit)="onSubmit()" (click)="$event.stopPropagation()">
+    <mat-form-field class="form__input" floatLabel="never">
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="Name" type="text" formControlName="Name" required>
+    <mat-error *ngIf="formControls.Name.invalid">Name is required!</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form__input" floatLabel="never">
+      <mat-label>Descriptions</mat-label>
+      <input matInput placeholder="Description" type="text" formControlName="Description" (click)="$event.stopPropagation()" required>
+    <mat-error *ngIf="formControls.Description.invalid">Description is required!</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form__input" floatLabel="never">
+      <mat-label>Company Contact</mat-label>
+      <input matInput placeholder="Company Contact" type="text" formControlName="Contact" (click)="$event.stopPropagation()" required>
+    <mat-error *ngIf="formControls.Contact.invalid">Company Contact is required!</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form__input" floatLabel="never">
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="Email" type="text" formControlName="Email" required>
+    <mat-error *ngIf="formControls.Email.invalid">Email is required!</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form__input" floatLabel="never">
+      <mat-label>Max Documents per month</mat-label>
+      <input matInput placeholder="Max Documents per month" type="number" formControlName="DocumentsLimit" required>
+    <mat-error *ngIf="formControls.DocumentsLimit.invalid">Max Documents per month is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="datepicker" floatLabel="never">
+      <mat-label>Subscription Expiration date</mat-label>
+      <input matInput [matDatepicker]="picker" required formControlName="ExpirationDate">
+      <mat-datepicker-toggle matSuffix [for]="picker">
+        <img src="./images/icons/calender.svg">
+      </mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    <mat-error *ngIf="formControls.ExpirationDate.invalid">Subscription Expiration date is required!</mat-error>
+
+    </mat-form-field>
+
+    <div class="api_errors">
+      <p *ngIf="!!api_error">{{api_error}}</p>
+    </div>
+
+    <div>
+      <a mat-raised-button class="cancel-btn">Cancel</a>
+      <button mat-raised-button type="submit" class="save-btn">Ok</button>
+    </div>
+  </form>

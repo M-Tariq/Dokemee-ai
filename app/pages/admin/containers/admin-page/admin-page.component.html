@@ -1,0 +1,75 @@
+<app-layout>
+  <mat-toolbar class="page-header" role="heading">
+    <h4>Admin User<mat-icon class="search-icon">clear</mat-icon>
+    </h4>
+  </mat-toolbar>
+
+
+  <div class="wrapper">
+    <mat-card>
+
+      <mat-card-title class="material-table__header">
+        <mat-list role="list">
+          <!-- Check list -->
+          <mat-list-item role="listitem">
+            <mat-select [(value)]="selected" disableOptionCentering panelClass="status-selction">
+              <mat-option value="title">
+                <mat-checkbox class="example-margin" indeterminate>All</mat-checkbox>
+              </mat-option>
+              <mat-option value="option1">
+                <mat-checkbox class="example-margin">Active!</mat-checkbox>
+              </mat-option>
+              <mat-option value="option2">
+                <mat-checkbox class="example-margin">In Active!</mat-checkbox>
+              </mat-option>
+            </mat-select>
+          </mat-list-item>
+
+          <!-- Search Box -->
+          <mat-list-item role="listitem">
+            <div class="search">
+              <mat-icon class="search-icon">search</mat-icon>
+              <input class="search-input" placeholder="Search...">
+            </div>
+          </mat-list-item>
+          <!-- Add User Icon -->
+          <mat-list-item role="listitem" *ngIf="ElementSwitch">
+            <button mat-icon-button class="edit-icon" (click)="onClick()" [matMenuTriggerFor]="menu">
+              <img src="./images/icons/add-user.svg">
+            </button>
+            <mat-menu #menu="matMenu" [overlapTrigger]="false">
+              <!-- Add user pop up -->
+              <app-add-user></app-add-user>
+            </mat-menu>
+          </mat-list-item>
+
+          <!-- Add Company Icon -->
+          <mat-list-item role="listitem" *ngIf="!ElementSwitch">
+            <button mat-icon-button class="edit-icon" [matMenuTriggerFor]="menu">
+              <img src="./images/icons/edit-company.svg">
+            </button>
+
+            <mat-menu #menu="matMenu" [overlapTrigger]="false">
+              <!-- Add company pop up -->
+              <app-add-company></app-add-company>
+            </mat-menu>
+
+          </mat-list-item>
+        </mat-list>
+      </mat-card-title>
+
+      <mat-tab-group (selectedTabChange)="EditMenueSwitch($event)">
+        <mat-tab label="Company Manger">
+          <manager-table [materialTableDate]="materialTableData$ | async"></manager-table>
+        </mat-tab>
+        <mat-tab label="User">
+          <admin-user-table [materialUserTableData]="materialUserTableData$ | async"></admin-user-table>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-card>
+  </div>
+
+
+  <app-footer></app-footer>
+
+</app-layout>

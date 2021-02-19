@@ -1,0 +1,26 @@
+<mat-list class="asside_icon_list">
+  <mat-list-item class="menue-action" (click)="sidebar_expended()">
+    <img src="./images/icons/menu(4).svg">
+  </mat-list-item>
+  <mat-list-item routerLink="{{routes.DASHBOARD}}">
+    <img src="./images/icons/dashboard.svg">
+  </mat-list-item>
+  <mat-list-item routerLink="{{routes.COMPANY}}">
+    <img src="./images/icons/company-mapping.svg">
+  </mat-list-item>
+  <mat-list-item routerLink="{{routes.REPORTS}}">
+    <img src="./images/icons/report.svg">
+  </mat-list-item>
+</mat-list>
+
+<mat-list class="asside_expended_content">
+  <mat-list-item routerLink="{{routes.DASHBOARD}}" [routerLinkActive]="'active'">
+    <span>Dashboard</span>
+  </mat-list-item>
+  <mat-list-item routerLink="{{routes.COMPANY}}" [routerLinkActive]="'active'">
+    <span>Active Company Maping</span>
+  </mat-list-item>
+  <mat-list-item routerLink="{{routes.REPORTS}}" [routerLinkActive]="'active'">
+    <span>Reports</span>
+  </mat-list-item>
+</mat-list>

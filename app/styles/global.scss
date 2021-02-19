@@ -1,0 +1,353 @@
+.mat-select-panel {
+  background: #fefefe 0% 0% no-repeat padding-box;
+  border: 1px solid #b7c1c8;
+  border-radius: 6px;
+  opacity: 1;
+  mat-option {
+    font-size: 14px;
+    color: #535353;
+    font-family: "Segoe UI";
+    mat-checkbox {
+      .mat-checkbox-layout {
+        .mat-checkbox-inner-container {
+          .mat-checkbox-frame {
+            border-color: #b7c1c8;
+          }
+        }
+        .mat-checkbox-label {
+          margin-left: 10px;
+        }
+      }
+
+      &.mat-checkbox-checked {
+        .mat-checkbox-background {
+          background: #cd3538;
+        }
+      }
+
+      &.mat-checkbox-indeterminate {
+        .mat-checkbox-inner-container {
+          .mat-checkbox-background {
+            background: transparent;
+            .mat-checkbox-mixedmark {
+              background-color: #b7c1c8;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.allcompanies {
+    margin-top: 50px;
+    min-width: 200px !important;
+  }
+  &.allcabnits {
+    margin-top: 50px;
+    min-width: 200px !important;
+  }
+  &.timefilter {
+    margin-top: 50px;
+    min-width: 200px !important;
+  }
+  &.operators {
+    margin-top: 50px;
+    min-width: 100px !important;
+  }
+  &.status-selction {
+    margin-top: 50px;
+    min-width: 150px !important;
+  }
+}
+
+.mat-menu-panel {
+  margin-top: 30px;
+  min-width: 200px !important;
+  box-shadow: 0px 0px 20px #00000026 !important;
+  position: relative;
+  overflow: visible !important;
+  max-width: 314px !important;
+  min-height: 40px !important;
+  &:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #ffffff;
+    right: 7px;
+    top: -8px;
+  }
+  .mat-menu-content {
+    padding: 0px !important;
+    button {
+      color: #535353;
+      font-size: 14px !important;
+      text-transform: capitalize;
+      font-family: "Segoe UI";
+      opacity: 1;
+      img {
+        margin-right: 10px;
+        height: 15px;
+      }
+      &:hover {
+        background: none !important;
+        .user-menu-icon {
+          color: #535353 !important;
+        }
+      }
+    }
+    .sign-button-wrapper {
+      border-top: 1px solid #d5d5d5;
+      padding-bottom: 8px !important;
+      button {
+        border: none;
+        color: #535353;
+        width: 100%;
+        text-align: left;
+      }
+    }
+
+    .company-edit-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 315px;
+      // max-height: 300px;
+      // overflow: auto;
+      padding: 30px 0px 20px 0px;
+      mat-form-field {
+        width: 85%;
+        display: block;
+        margin-bottom: 10px;
+        input {
+          height: 43px;
+          border: 1px solid #b7c1c8;
+          border-radius: 8px;
+          width: 100%;
+          &:focus {
+            ~ .mat-form-field-label-wrapper {
+              label {
+                display: block;
+                mat-label {
+                }
+              }
+            }
+          }
+        }
+
+        &.datepicker {
+          .mat-form-field-flex {
+            height: 43px;
+            border: 1px solid #b7c1c8;
+            border-radius: 8px !important;
+            display: flex;
+            align-items: center;
+          }
+          input {
+            border: none;
+          }
+        }
+      }
+      .mat-form-field-label-wrapper {
+        top: -45px;
+        font-size: 16px;
+        label {
+          color: #535353;
+          font-family: "Segoe Semi Bold";
+          display: block !important;
+        }
+      }
+      .cancel-btn {
+        height: 30px;
+        line-height: 30px;
+        border-radius: 8px;
+        background: #cd3538;
+        width: 100px;
+        color: #ffffff;
+        font-family: "Segoe Semi Bold";
+        font-size: 14px;
+        margin-right: 20px;
+      }
+      .save-btn {
+        height: 30px;
+        line-height: 30px;
+        border-radius: 8px;
+        background: #028a0f;
+        width: 100px;
+        color: #ffffff;
+        font-family: "Segoe Semi Bold";
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+.opretors-selection {
+  width: 50px;
+  mat-select.mat-select {
+    padding: 0px !important;
+    display: flex;
+    height: 35px;
+    align-items: center;
+    border-top-left-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+    .mat-select-trigger {
+      padding: 0px 5px;
+    }
+  }
+}
+
+app-header {
+  .user-button {
+    .mat-button-wrapper {
+      display: flex;
+      align-items: center;
+      img {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+.profile-dialog {
+  .mat-form-field-label-wrapper {
+    top: -40px;
+    label {
+      font-size: 16px;
+      font-family: "Segoe UI";
+      color: #535353;
+      text-transform: capitalize;
+    }
+  }
+}
+
+mat-card {
+  box-shadow: 0px 0px 12px #00000008 !important;
+  mat-card {
+    box-shadow: none !important;
+  }
+}
+
+//custom select skin
+
+mat-select {
+  .mat-select-trigger {
+    height: 43px;
+    display: inline-table;
+    line-height: 43px;
+    width: 100%;
+    padding: 0px 10px;
+    .mat-select-arrow-wrapper {
+      width: 20px;
+    }
+  }
+  ~ .mat-form-field-label-wrapper {
+    top: -40px !important;
+    label {
+      font-size: 16px;
+      color: #535353 !important;
+      font-family: "Segoe Semi Bold";
+      margin-bottom: 32px;
+      transform: none !important;
+    }
+  }
+}
+
+.cust-mat-select {
+  margin-top: 55px;
+  min-width: 100% !important;
+  margin-left: 20px !important;
+  position: relative;
+  overflow: visible !important;
+  &:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #ffffff;
+    right: 7px;
+    top: -8px;
+  }
+}
+
+// SLIDE TOGGLE
+mat-slide-toggle {
+  .mat-slide-toggle-label {
+    .mat-slide-toggle-bar {
+      height: 10px;
+      background: #e2e5e6 !important;
+      .mat-slide-toggle-thumb-container {
+        top: -4px;
+        .mat-slide-toggle-thumb {
+          background: #6e7f80;
+          height: 18px;
+          width: 18px;
+        }
+      }
+    }
+    .mat-slide-toggle-content {
+      font-size: 16px;
+      color: #535353;
+      font-family: "Segoe UI";
+      opacity: 0.7;
+      margin-left: 5px;
+    }
+  }
+  &.mat-checked {
+  }
+}
+
+.datepicker {
+  .mat-form-field-flex {
+    font-size: 16px;
+    font-weight: 300;
+    color: #3b3e40;
+    border: 1px solid #b9b9b9;
+    border-radius: 4px;
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+    padding: 2px 10px;
+    margin-top: 11px;
+    display: flex;
+    align-items: center;
+    .mat-form-field-infix {
+      border: none;
+    }
+  }
+  .mat-datepicker-toggle {
+    button {
+      height: 25px;
+      width: 25px;
+      border-radius: 0px;
+      background-image: url(../../images/icons/calender.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      &:hover {
+        background-image: url(../../images/icons/calender.svg) !important;
+        background-size: contain !important;
+        background-repeat: no-repeat !important;
+      }
+      svg {
+        display: none;
+      }
+    }
+  }
+}
+
+// table wrapper
+
+.table-wrapper {
+  overflow: auto;
+}
+
+
+.disable-backdrop-click .cdk-overlay-backdrop.cdk-overlay-transparent-backdrop.cdk-overlay-backdrop-showing {
+  pointer-events: none;
+}

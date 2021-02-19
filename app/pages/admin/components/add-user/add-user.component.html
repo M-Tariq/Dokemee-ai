@@ -1,0 +1,44 @@
+<form class="company-edit-form" [formGroup]="form" (ngSubmit)="onSubmit()" (click)="$event.stopPropagation()">
+  <mat-form-field class="form__input" floatLabel="never" (click)="$event.stopPropagation();">
+    <mat-label>User Name</mat-label>
+    <input matInput placeholder="User Name" type="text" formControlName="userName" required>
+    <mat-error *ngIf="formControl.userName.invalid">User Name is required!</mat-error>
+    <mat-error *ngIf="false">User Name already taken!</mat-error>
+
+  </mat-form-field>
+
+  <mat-form-field class="form__input" floatLabel="never">
+    <mat-label>First Name</mat-label>
+    <input matInput placeholder="First Name" type="text" formControlName="firstName">
+    <mat-error *ngIf="formControl.firstName.invalid">First Name is required!</mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="form__input" floatLabel="never" (click)="$event.stopPropagation();">
+    <mat-label>Last Name</mat-label>
+    <input matInput placeholder="Last Name" type="text" formControlName="lastName" required>
+    <mat-error *ngIf="formControl.lastName.invalid">Last Name is required!</mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="form__input" floatLabel="never" (click)="$event.stopPropagation();">
+    <mat-label>Email</mat-label>
+    <input matInput placeholder="Email" type="email" formControlName="email" required>
+    <mat-error *ngIf="formControl.email.invalid">Email is invalid!</mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="form__input" floatLabel="never" (click)="$event.stopPropagation();">
+    <mat-label>Confirm Email</mat-label>
+    <input matInput placeholder="Confirm Email" type="text" formControlName="confirmEmail" required>
+    <mat-error *ngIf="formControl.confirmEmail.errors">Confirm email must match with email!</mat-error>
+  </mat-form-field>
+
+  <div class="api_errors">
+    <p *ngIf="!!api_error">{{api_error}}</p>
+  </div>
+
+  <div>
+    <button mat-raised-button class="cancel-btn" (click)="!$event.stopPropagation()">Cancel</button>
+    <button mat-raised-button [disabled]="(formControl.userName.invalid || formControl.firstName.invalid 
+    || formControl.lastName.invalid || formControl.email.invalid 
+    || formControl.confirmEmail.invalid)" type="submit" class="save-btn">Ok</button>
+  </div>
+</form>

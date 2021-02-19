@@ -1,0 +1,16 @@
+<button class="user-button" mat-mini-fab [matMenuTriggerFor]="userMenu">
+  <h5 class="user-name">Amelia</h5>
+  <img src="./images/user-placeholder.png">
+</button>
+<mat-menu #userMenu="matMenu" xPosition="before" yPosition="below">
+  <button mat-menu-item class="user-menu__item-title" (click)="OpenProfileDialog()">
+    <img src="./images/icons/person-icon.svg">Profile
+  </button>
+  <button mat-menu-item class="user-menu__item-title" (click)="OpenSettingsDialog()">
+    <img src="./images/icons/gear.svg">Settings
+  </button>
+  <div class="sign-button-wrapper">
+    <button class="sign-button" mat-flat-button (click)="onSignOut()">
+      <img src="./images/icons/logout.svg" >Sign out</button>
+  </div>
+</mat-menu>
