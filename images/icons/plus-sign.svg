@@ -1,5 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="18.954" height="18.954" viewBox="0 0 18.954 18.954">
-  <g id="plus-sign" transform="translate(9.477) rotate(45)">
-    <path id="Path_200" data-name="Path 200" d="M12.355,5.654H7.748V1.047a1.047,1.047,0,1,0-2.094,0V5.654H1.047a1.047,1.047,0,0,0,0,2.094H5.654v4.607a1.047,1.047,0,0,0,2.094,0V7.748h4.607a1.047,1.047,0,1,0,0-2.094Z" fill="#535353"/>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="18.954" height="18.954" viewBox="0 0 18.954 18.954"><g id="plus-sign" transform="translate(9.477) rotate(45)"><path id="Path_200" fill="#535353" d="M12.355,5.654H7.748V1.047a1.047,1.047,0,1,0-2.094,0V5.654H1.047a1.047,1.047,0,0,0,0,2.094H5.654v4.607a1.047,1.047,0,0,0,2.094,0V7.748h4.607a1.047,1.047,0,1,0,0-2.094Z" data-name="Path 200"/></g></svg>

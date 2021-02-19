@@ -1,7 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="6" height="26" viewBox="0 0 6 26">
-  <g id="Group_123" data-name="Group 123" transform="translate(-4552.667 -1150)" opacity="0.8">
-    <circle id="Ellipse_17" data-name="Ellipse 17" cx="3" cy="3" r="3" transform="translate(4552.667 1150)" fill="#535353"/>
-    <circle id="Ellipse_18" data-name="Ellipse 18" cx="3" cy="3" r="3" transform="translate(4552.667 1160)" fill="#535353"/>
-    <circle id="Ellipse_19" data-name="Ellipse 19" cx="3" cy="3" r="3" transform="translate(4552.667 1170)" fill="#535353"/>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="6" height="26" viewBox="0 0 6 26"><g id="Group_123" data-name="Group 123" opacity=".8" transform="translate(-4552.667 -1150)"><circle id="Ellipse_17" cx="3" cy="3" r="3" fill="#535353" data-name="Ellipse 17" transform="translate(4552.667 1150)"/><circle id="Ellipse_18" cx="3" cy="3" r="3" fill="#535353" data-name="Ellipse 18" transform="translate(4552.667 1160)"/><circle id="Ellipse_19" cx="3" cy="3" r="3" fill="#535353" data-name="Ellipse 19" transform="translate(4552.667 1170)"/></g></svg>
